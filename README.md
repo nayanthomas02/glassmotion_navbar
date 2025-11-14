@@ -11,11 +11,16 @@ Flutter Developer
 
 ---
 
-<!-- Demo GIFs: side-by-side preview -->
+<!-- Demo GIFs: side-by-side preview that link to the animated raw GIF -->
 <p align="center">
-  <img src="example/screenshots/Dark.gif" alt="Dark Mode Demo" width="360" />
-  <img src="example/screenshots/Light.gif" alt="Light Mode Demo" width="360" />
+  <a href="https://raw.githubusercontent.com/nayanthomas02/glassmotion_navbar/main/example/screenshots/Dark.gif" target="_blank" rel="noopener">
+    <img src="example/screenshots/Dark.gif" alt="Dark Mode Demo" width="360" />
+  </a>
+  <a href="https://raw.githubusercontent.com/nayanthomas02/glassmotion_navbar/main/example/screenshots/Light.gif" target="_blank" rel="noopener">
+    <img src="example/screenshots/Light.gif" alt="Light Mode Demo" width="360" />
+  </a>
 </p>
+
 
 ## ✨ Features
 
@@ -32,4 +37,4 @@ Flutter Developer
 Add to your `pubspec.yaml`:
 ```yaml
 dependencies:
-  glassmotion_navbar: ^0.1.2
+  glassmotion_navbar: ^0.1.4

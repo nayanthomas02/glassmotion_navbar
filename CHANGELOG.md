@@ -1,4 +1,4 @@
-# 0.1.3 — 2025-11-14
+# 0.1.4 — 2025-11-14
 
 - Fix pubspec repository/homepage to point to glassmotion_navbar.
 - Add demo GIFs for Dark and Light themes.s
