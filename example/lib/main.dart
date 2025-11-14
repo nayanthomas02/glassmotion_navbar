@@ -10,7 +10,7 @@ class DemoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'GlassMotionNav Demo',
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
       home: const DemoHome(),
       debugShowCheckedModeBanner: false,
     );

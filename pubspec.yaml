@@ -1,6 +1,6 @@
 name: glassmotion_navbar
 description: A glassmorphic bottom navigation bar with animated lift/jump and a floating center button for Flutter.
-version: 0.1.1
+version: 0.1.2
 
 homepage: https://github.com/nayanthomas02/Flutter
 repository: https://github.com/nayanthomas02/Flutter

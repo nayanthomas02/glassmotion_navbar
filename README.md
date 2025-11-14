@@ -11,7 +11,11 @@ Flutter Developer
 
 ---
 
-![Demo GIF](example/screenshots/demo.gif) 
+<!-- Demo GIFs: side-by-side preview -->
+<p align="center">
+  <img src="example/screenshots/Dark.gif" alt="Dark Mode Demo" width="360" />
+  <img src="example/screenshots/Light.gif" alt="Light Mode Demo" width="360" />
+</p>
 
 ## ✨ Features
 
@@ -28,4 +32,4 @@ Flutter Developer
 Add to your `pubspec.yaml`:
 ```yaml
 dependencies:
-  glassmotion_navbar: ^0.1.1
+  glassmotion_navbar: ^0.1.2

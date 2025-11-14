@@ -1,4 +1,4 @@
-## 0.1.1
+## 0.1.2
 
 - Initial release of **glassmotion_navbar** 🎉  
 - Added glassmorphic bottom navigation bar with:
