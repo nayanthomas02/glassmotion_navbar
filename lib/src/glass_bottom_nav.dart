@@ -41,7 +41,8 @@ class GlassContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Use colorScheme.surface as the default base instead of the removed bottomAppBarColor
-    final bg = color ?? Theme.of(context).colorScheme.surface.withOpacity(0.06);
+    final base = Theme.of(context).colorScheme.surface;
+    final bg = color ?? base.withAlpha((0.06 * 255).round());
     return ClipRRect(
       borderRadius: borderRadius ?? BorderRadius.circular(16),
       child: BackdropFilter(
@@ -53,7 +54,7 @@ class GlassContainer extends StatelessWidget {
             borderRadius: borderRadius ?? BorderRadius.circular(16),
             border: border ??
                 Border.all(
-                  color: Colors.white.withOpacity(0.04),
+                  color: Colors.white.withAlpha((0.04 * 255).round()),
                   width: 0.8,
                 ),
           ),
@@ -113,6 +114,9 @@ class GlassMotionNavBar extends StatefulWidget {
 
   final bool enableHaptics;
 
+  // Targeted ignore: analyzer reports that the optional `key` is never given
+  // inside the package; this is informational only and keeps the public API.
+  // ignore: unused_element
   GlassMotionNavBar({
     super.key,
     required this.items,
@@ -188,8 +192,9 @@ class _GlassMotionNavBarState extends State<GlassMotionNavBar>
     final accent =
         widget.accentColor ?? Theme.of(context).colorScheme.secondary;
     final inactive = widget.inactiveColor ?? Colors.grey.shade400;
-    final bg = widget.backgroundColor ??
-        Theme.of(context).colorScheme.surface.withOpacity(0.02);
+
+    final base = Theme.of(context).colorScheme.surface;
+    final bg = widget.backgroundColor ?? base.withAlpha((0.02 * 255).round());
 
     final count = widget.items.length;
     final centerSlot = (count / 2).floor(); // index of center slot in items
@@ -295,7 +300,10 @@ class _GlassMotionNavBarState extends State<GlassMotionNavBar>
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             gradient: RadialGradient(
-              colors: [accent.withOpacity(0.06), Colors.transparent],
+              colors: [
+                accent.withAlpha((0.06 * 255).round()),
+                Colors.transparent
+              ],
               center: const Alignment(-0.2, -0.2),
               radius: 0.9,
             ),
@@ -308,8 +316,10 @@ class _GlassMotionNavBarState extends State<GlassMotionNavBar>
           height: fabDiameter + 6,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border:
-                Border.all(color: Colors.white.withOpacity(0.06), width: 1.2),
+            border: Border.all(
+              color: Colors.white.withAlpha((0.06 * 255).round()),
+              width: 1.2,
+            ),
           ),
         ),
 
@@ -323,8 +333,8 @@ class _GlassMotionNavBarState extends State<GlassMotionNavBar>
               center: const Alignment(-0.2, -0.2),
               radius: 0.85,
               colors: [
-                accent.withOpacity(0.06),
-                accent.withOpacity(0.03),
+                accent.withAlpha((0.06 * 255).round()),
+                accent.withAlpha((0.03 * 255).round()),
                 Colors.transparent
               ],
               stops: const [0.0, 0.45, 1.0],
@@ -341,15 +351,16 @@ class _GlassMotionNavBarState extends State<GlassMotionNavBar>
               height: fabDiameter,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.white.withOpacity(0.06),
+                color: Colors.white.withAlpha((0.06 * 255).round()),
                 boxShadow: [
                   BoxShadow(
-                      color: Colors.black.withOpacity(0.12),
+                      color: Colors.black.withAlpha((0.12 * 255).round()),
                       blurRadius: 10,
                       offset: const Offset(0, 6))
                 ],
                 border: Border.all(
-                    color: Colors.white.withOpacity(0.06), width: 0.8),
+                    color: Colors.white.withAlpha((0.06 * 255).round()),
+                    width: 0.8),
               ),
             ),
           ),
@@ -363,8 +374,8 @@ class _GlassMotionNavBarState extends State<GlassMotionNavBar>
             shape: BoxShape.circle,
             gradient: LinearGradient(
               colors: [
-                Colors.white.withOpacity(0.14),
-                Colors.white.withOpacity(0.02)
+                Colors.white.withAlpha((0.14 * 255).round()),
+                Colors.white.withAlpha((0.02 * 255).round())
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -378,8 +389,9 @@ class _GlassMotionNavBarState extends State<GlassMotionNavBar>
           height: fabDiameter - 8,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border:
-                Border.all(color: Colors.white.withOpacity(0.06), width: 0.8),
+            border: Border.all(
+                color: Colors.white.withAlpha((0.06 * 255).round()),
+                width: 0.8),
           ),
         ),
 
@@ -401,7 +413,7 @@ class _GlassMotionNavBarState extends State<GlassMotionNavBar>
               borderRadius: BorderRadius.circular(8),
               boxShadow: [
                 BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
+                    color: Colors.black.withAlpha((0.2 * 255).round()),
                     blurRadius: 8,
                     spreadRadius: 1,
                     offset: const Offset(0, 2))
@@ -425,6 +437,7 @@ class _AnimatedColumnIcon extends StatelessWidget {
   final Duration duration;
 
   const _AnimatedColumnIcon({
+    // ignore: unused_element
     super.key,
     required this.icon,
     required this.label,

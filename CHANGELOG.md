@@ -1,8 +1,11 @@
-# 0.1.4 — 2025-11-14
+## 0.1.5 — 2025-12-04
 
-- Fix pubspec repository/homepage to point to glassmotion_navbar.
-- Add demo GIFs for Dark and Light themes.s
-  - Floating glass center FAB
-  - Animated lift/jump on selected icons
-  - Customizable colors, labels, and sizes
-  - Example demo app included
+- Fixed pubspec `homepage` and `repository` URLs for the package.
+- Added demo GIFs for both Dark and Light themes.
+- Replaced deprecated `withOpacity` uses with `withAlpha` to match Dart 3.10 APIs.
+- Cleaned up constructors using `super.key`.
+- Resolved static analysis warnings from pub.dev:
+  - Unused `key` parameter info handled with targeted ignore.
+  - Removed remaining deprecated API usage.
+- Improved glassmorphism visuals and edge highlights.
+- Updated example app and screenshots.

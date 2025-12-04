@@ -37,4 +37,4 @@ Flutter Developer
 Add to your `pubspec.yaml`:
 ```yaml
 dependencies:
-  glassmotion_navbar: ^0.1.4
+  glassmotion_navbar: ^0.1.5
